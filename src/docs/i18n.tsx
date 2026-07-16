@@ -53,6 +53,7 @@ export const UI = {
     kbdHeading: "Copy heading link",
     hoverHeading: "hover heading",
     footer: "Nexus Wiki · Community-maintained documentation · Built with TanStack Start",
+    mainSite: "Main site",
   },
   ru: {
     documentation: "Документация",
@@ -98,6 +99,7 @@ export const UI = {
     kbdHeading: "Копировать ссылку на заголовок",
     hoverHeading: "наведите на заголовок",
     footer: "Nexus Wiki · Документация поддерживается сообществом · Собрано на TanStack Start",
+    mainSite: "Главный сайт",
   },
 } as const;
 

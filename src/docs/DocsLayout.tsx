@@ -41,7 +41,7 @@ export function DocsLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-3 px-4">
           <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden">
+              <Button variant="ghost" size="icon" className="md:hidden" aria-label="Открыть меню">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -55,6 +55,17 @@ export function DocsLayout({ children }: { children: ReactNode }) {
             </SheetContent>
           </Sheet>
 
+          <a
+            href="https://nexussky.pages.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex"
+          >
+            <Button variant="outline" size="sm">
+              🏠 {t("mainSite")}
+            </Button>
+          </a>
+
           <Link to="/" className="flex items-center gap-2 shrink-0">
             <BrandMark />
           </Link>
@@ -64,12 +75,14 @@ export function DocsLayout({ children }: { children: ReactNode }) {
               to="/docs/$"
               params={{ _splat: "getting-started/about-nexus" }}
               className={cn(
-                "rounded-md px-2.5 py-1.5 text-muted-foreground transition-colors hover:text-foreground",
-                pathname.startsWith("/docs") && "text-foreground"
+               "rounded-md px-2.5 py-1.5 text-muted-foreground transition-colors hover:text-foreground",
+               pathname.startsWith("/docs") && "text-foreground"
               )}
             >
               {t("documentation")}
             </Link>
+
+
             <Link
               to="/docs/$"
               params={{ _splat: "development/changelog" }}
@@ -77,6 +90,7 @@ export function DocsLayout({ children }: { children: ReactNode }) {
             >
               {t("changelog")}
             </Link>
+
             <Link
               to="/docs/$"
               params={{ _splat: "development/roadmap" }}
@@ -84,8 +98,19 @@ export function DocsLayout({ children }: { children: ReactNode }) {
             >
               {t("roadmap")}
             </Link>
+
+
+            <a
+              href="https://nexussky.pages.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md px-2.5 py-1.5 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              🌐 {t("mainSite")}
+            </a>
           </nav>
 
+          
           <div className="flex-1" />
 
           <button
